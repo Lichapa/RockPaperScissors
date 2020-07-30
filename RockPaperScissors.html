@@ -12,8 +12,9 @@
 
 <body>
     <script>
-        let computerSelection = computerPlay()
-        let playerSelection = userPlay()
+        let computerSelection = computerPlay();
+        let playerSelection = userPlay();
+        let roundPlayed = playround();
 
         function userPlay() {
             let play = prompt("Enter Rock, Paper or Scissors");
@@ -21,7 +22,7 @@
             play = play.toLowerCase();
             return play;
 
-        }
+        };
 
         function computerPlay() {
             const computerSelection = ["rock", "paper", "scissors"];
@@ -29,7 +30,7 @@
             const random = Math.floor(Math.random() * computerSelection.length);
             return computerSelection[random];
 
-        }
+        };
 
         function playround(playerSelection, computerSelection) {
             if (playerSelection === "rock" && computerSelection === "rock" || playerSelection === "paper" && computerSelection === "paper" ||
@@ -48,7 +49,7 @@
             } else if (playerSelection === "Rock" && computerSelection === "paper") {
                 return "You lose! Paper Covers Rock";
             }
-        }
+        };
 
         function game() {
             let playerSelect = userPlay();
@@ -60,7 +61,7 @@
             let result = playround();
             console.log(playround(playerSelection, computerSelection));
 
-        }
+        };
 
         game();
         game();
