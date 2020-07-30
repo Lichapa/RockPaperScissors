@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <script>
+        let computerSelection = computerPlay()
+        let playerSelection = userPlay()
+
+        function userPlay() {
+            let play = prompt("Enter Rock, Paper or Scissors");
+
+            play = play.toLowerCase();
+            return play;
+
+        }
+
+        function computerPlay() {
+            const computerSelection = ["rock", "paper", "scissors"];
+
+            const random = Math.floor(Math.random() * computerSelection.length);
+            return computerSelection[random];
+
+        }
+
+        function playround(playerSelection, computerSelection) {
+            if (playerSelection === "rock" && computerSelection === "rock" || playerSelection === "paper" && computerSelection === "paper" ||
+                playerSelection === "scissors" && computerSelection === "scissors") {
+                return "it's a tie";
+            } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                return "You win! Rock Crushes Scissors";
+            } else if (playerSelection === "paper" && computerSelection === "scissors") {
+                return "You Lose! Scissors Cut Paper";
+            } else if (playerSelection === "scissors" && computerSelection === "rock") {
+                return "You Lose! Rock Crushes Scissors";
+            } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                return "You win! Scissors Cut Paper";
+            } else if (playerSelection === "paper" && computerSelection === "rock") {
+                return "You win! Paper Covers Rock";
+            } else if (playerSelection === "Rock" && computerSelection === "paper") {
+                return "You lose! Paper Covers Rock";
+            }
+        }
+
+        function game() {
+            let playerSelect = userPlay();
+            console.log("you chose", playerSelect);
+
+            let computerSelect = computerPlay();
+            console.log("Computer Chose", computerSelect);
+
+            let result = playround();
+            console.log(playround(playerSelection, computerSelection));
+
+        }
+
+        game();
+        game();
+        game();
+    </script>
+
+
+</body>
+
+</html>
