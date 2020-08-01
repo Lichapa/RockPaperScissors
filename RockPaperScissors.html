@@ -12,10 +12,6 @@
 
 <body>
     <script>
-        let computerSelection = computerPlay();
-        let playerSelection = userPlay();
-        let roundPlayed = playround();
-
         function userPlay() {
             let play = prompt("Enter Rock, Paper or Scissors");
 
@@ -32,22 +28,22 @@
 
         };
 
-        function playround(playerSelection, computerSelection) {
-            if (playerSelection === "rock" && computerSelection === "rock" || playerSelection === "paper" && computerSelection === "paper" ||
-                playerSelection === "scissors" && computerSelection === "scissors") {
-                return "it's a tie";
-            } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        function playround(player, computer) {
+
+            if (player == "rock" && computer == "scissors") {
                 return "You win! Rock Crushes Scissors";
-            } else if (playerSelection === "paper" && computerSelection === "scissors") {
+            } else if (player == "paper" && computer == "scissors") {
                 return "You Lose! Scissors Cut Paper";
-            } else if (playerSelection === "scissors" && computerSelection === "rock") {
+            } else if (player == "scissors" && computer == "rock") {
                 return "You Lose! Rock Crushes Scissors";
-            } else if (playerSelection === "scissors" && computerSelection === "paper") {
+            } else if (player == "scissors" && computer == "paper") {
                 return "You win! Scissors Cut Paper";
-            } else if (playerSelection === "paper" && computerSelection === "rock") {
+            } else if (player == "paper" && computer == "rock") {
                 return "You win! Paper Covers Rock";
-            } else if (playerSelection === "Rock" && computerSelection === "paper") {
+            } else if (player == "rock" && computer == "paper") {
                 return "You lose! Paper Covers Rock";
+            } else {
+                return "It's a tie";
             }
         };
 
@@ -58,8 +54,8 @@
             let computerSelect = computerPlay();
             console.log("Computer Chose", computerSelect);
 
-            let result = playround();
-            console.log(playround(playerSelection, computerSelection));
+            let roundplayed = playround(playerSelect, computerSelect);
+            console.log(roundplayed);
 
         };
 
