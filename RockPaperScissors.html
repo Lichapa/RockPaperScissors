@@ -48,19 +48,21 @@
         };
 
         function game() {
-            let playerSelect = userPlay();
-            console.log("you chose", playerSelect);
+            for (i = 0; i < 3; i++) {
 
-            let computerSelect = computerPlay();
-            console.log("Computer Chose", computerSelect);
 
-            let roundplayed = playround(playerSelect, computerSelect);
-            console.log(roundplayed);
+                let playerSelect = userPlay();
+                console.log("you chose", playerSelect);
+
+                let computerSelect = computerPlay();
+                console.log("Computer Chose", computerSelect);
+
+                let roundplayed = playround(playerSelect, computerSelect);
+                console.log(roundplayed);
+            }
 
         };
 
-        game();
-        game();
         game();
     </script>
 
