@@ -5,12 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script src="https://kit.fontawesome.com/2c6133bcaa.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </head>
 
 <body>
+	<nav class="navbar navbar-dark bg-dark">
+		<span class="navbar-brand mb-0 h1">
+			Rock Paper Scissors
+		</span>
+		<!-- Button trigger modal-->
+		<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+			Instructions
+		</button>
+	</nav>
     <script>
         function userPlay() {
             let play = prompt("Enter Rock, Paper or Scissors");
